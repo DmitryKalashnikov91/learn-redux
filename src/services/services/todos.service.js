@@ -10,12 +10,8 @@ const todosService = {
         });
         return data;
     },
-    add: async () => {
-        const { data } = await httpService.post(todosEndepoint, {
-            params: {
-                _limit: 1,
-            },
-        });
+    add: async (payload) => {
+        const { data } = await httpService.post(todosEndepoint, payload);
         return data;
     },
 };

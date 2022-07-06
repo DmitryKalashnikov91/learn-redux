@@ -24,6 +24,10 @@ const App = () => {
         dispatch(loadTasks());
     }, []);
 
+    const addNewTask = () => {
+        dispatch(createTask({ userId: 1, title: 'some new task', completed: false }));
+    };
+
     const changeTitle = (taskId) => {
         dispatch(titleChanged(taskId));
     };
@@ -53,7 +57,7 @@ const App = () => {
                     </li>
                 ))}
             </ul>
-            <button onClick={() => dispatch(createTask())}>Add task</button>
+            <button onClick={addNewTask()}>Add task</button>
         </>
     );
 };
